@@ -14,8 +14,6 @@ submitQuote() {
           this.addQuote.emit(this.newQuote);
       }
 
-    constructor() { }
-
   constructor() { }
 
   ngOnInit() {

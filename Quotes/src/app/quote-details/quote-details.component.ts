@@ -9,14 +9,13 @@ import {Quote} from '../quote';
 })
 export class QuoteDetailsComponent implements OnInit {
 
+votes: number;
+
 @Input() quote: Quote;
 @Output() isDelete = new EventEmitter<boolean>();
-  constructor() { }
   quoteDelete(complete: boolean) {
     this.isDelete.emit(complete);
   }
-
-  votes: number;
 
   constructor() {
     this.votes = 0;
