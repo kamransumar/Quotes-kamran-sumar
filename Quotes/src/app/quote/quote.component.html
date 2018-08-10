@@ -1,3 +1,35 @@
-<p>
-  quote works!
-</p>
+<div class="jumbotron">
+<h2>
+      Add a new Quote
+    </h2>
+    <hr>
+    <app-quote-form (addQuote)="addQuote($event)"></app-quote-form>
+    </div>
+    <div class="jumbotron">
+        <div class="card">
+          <div class="card-header">
+            <h3>Popular Quotes</h3>
+          </div>
+          <div *ngFor='let quote of quotes;let i = index'>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+
+                <div class="card-body">
+                  <div class="card-title">
+                    <h5 id="{{i}}" appHighlight>"{{quote.quote}}"</h5>
+                  </div>
+                  <br>
+                  <div class="card-text">
+
+                    <app-quote-details *ngIf="quote.showDetails" [quote]='quote' (isDelete)='deleteQuote($event,i)'></app-quote-details>
+                    <p>
+                      <a href="#" (click)='toogleDetails(i)'><small>quote details</small></a>
+                    </p>
+                  </div>
+                </div>
+                <hr>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
