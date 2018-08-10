@@ -1,0 +1,35 @@
+<div class="row">
+  <div class="col-md-6">
+    <p>Author: {{quote.author}}</p>
+
+  </div>
+  <div class="col-md-6">
+    <p>Posted by: {{quote.postedBy}}</p>
+  </div>
+
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <button type="submit" name="button btn-primary btn-sm" (click)='voteUp()' >up vote</button>
+    </div>
+    <div class="col-md-4">
+      <button type="submit" name="button btn-success btn-sm" (click)='voteDown()'>down vote</button>
+
+    </div>
+    <div class="col-md-4">
+<button type="Submit" class="btn btn-danger btn-sm" (click)='quoteDelete(true)'>Delete</button>
+    </div>
+  </div>
+</div>
+<div class="card-footer">
+  <div class="row">
+    <div class="col-md-6">
+<strong><em>{{votes}} likes</em></strong>
+    </div>
+    <div class="col-md-6">
+      <p><small><em> {{quote.datePublished|dateCount}} days ago</em></small></p>
+    </div>
+  </div>
+</div>
